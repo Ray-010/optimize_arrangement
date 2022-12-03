@@ -8,7 +8,7 @@ from create_route import CreateRoute
 # TODO: 障害物対応
 
 def main():
-    height, width = random.randint(5, 10), random.randint(5, 10)
+    height, width = random.randint(2, 5), random.randint(2, 5)
     sy, sx = 0, random.randint(0, width-1)
     gy, gx = height-1, random.randint(sx, width-1)
     print("Map Size: ", "Height", height, "Width", width)
@@ -23,20 +23,8 @@ def main():
         return
     
     pre = time.time()
-
     pole_route = CreateRoute(width, height, sy, sx, gy, gx)
-    # 障害物生成
-    # pole_route.create_obstacle(5)
-    # 経過点生成
-    passing_points = pole_route.make_passing_point(congestion_rate)
     
-    for path in passing_points:
-        start, goal = path
-        # 幅優先探索
-        pole_route.bfs_shortest_distance(start, goal)
-        # 経路復元と確定経路以外を一度リセット
-        pole_route.reset_map(start, goal)
-
     print("Map Route ###########################################################")
     route_only = np.array(pole_route.area)
     print(route_only)
