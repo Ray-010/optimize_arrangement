@@ -3,7 +3,7 @@ from PathCreation import PathCreation
 from collections import deque
 
 
-class CreateRoute(PathCreation):
+class BeltCreation(PathCreation):
     def __init__(self, width, height, start, goal) -> None:
         super().__init__(width, height, start, goal)
         self.width = width

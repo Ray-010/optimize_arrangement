@@ -1,7 +1,7 @@
 import random
 import time
 import numpy as np
-from create_route import CreateRoute
+from BeltCreation import BeltCreation
 
 
 # TODO: 2次元配列処理をnumpy配列にして高速化する
@@ -23,7 +23,7 @@ def main():
         return
     
     pre = time.time()
-    pole_route = CreateRoute(width, height, sy, sx, gy, gx)
+    pole_route = BeltCreation(width, height, sy, sx, gy, gx)
     
     print("Map Route ###########################################################")
     route_only = np.array(pole_route.area)
